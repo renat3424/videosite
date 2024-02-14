@@ -1,0 +1,69 @@
+<%- include("layouts/header")%>
+<%- include("layouts/navigation1")%>
+
+<div class="left-info">
+			<div class="UserInfo">
+				
+			<div class="account-image"><img src="<%=user.photo %>" onclick="document.getElementById('input-file-profile-picture').click()" onerror="this.src='public/images/change-icon.png'"></div>
+			<div class="username"><h1><%=user.name%></h1></div>
+			<div class="userinfo"><p><%=user.info%></p></div>
+			
+            </div>
+            
+
+            <div class="userdata">
+            	<ul>
+            		
+
+            		<li><img src="public/images/email.png"><p><%=user.email%></p> </li>
+            		
+            					
+            	</ul>
+            </div>
+               <div class="videoinfo">
+            	<ul>
+            		
+
+            		<li><p>Posted videos: <%=videos.length%></p> </li>
+            			
+            				
+            					
+            	</ul>
+            </div>
+
+		</div>
+        <div class="right-info">
+        	
+           <div class="page-info">
+           	<div class="AboutPage"><h1>About this page:</h1><button type="button" class="fas fa-ballot-check" id="changeInfo"> </button></div>
+           	<p><%=user.pageinfo%></p>
+           	
+           </div>
+
+           <div class="SomeButtons"><p class="Posted">Posted Videos:</p><button id="addvideo">Add</button></div>
+           	  	<ol>
+			<%videos.forEach(function(video){%>
+
+                     <li class="videoholder" id="video">
+					<a href="/watch/<%=video.createdAt%>">
+					<div class="imageholder">
+					<img src="<%=video.thumbnail %>">
+				</div>
+				<div class="TextInfo">
+				<h1 class="VideoName"><%=video.title%></h1>
+				<p class="VideoInfo"><%=video.description%></p>
+				<p class="DataInfo"><%=video.hours+":"+video.minutes+":"+video.seconds%></p>
+			     </div>
+					</a>
+				</li>
+
+
+
+			<%})%>	
+			</ol>
+        </div>
+<form method="POST" action="/change-profile-picture" enctype="multipart/form-data" id="form-change-profile-picture">
+	<input type="file" id="input-file-profile-picture" style="display: none;" accept="public/images/*" name="image" required onchange ="document.getElementById('form-change-profile-picture').submit()">
+
+</form>
+<%- include("layouts/footer1")%>

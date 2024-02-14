@@ -1,0 +1,126 @@
+</div>
+
+<footer><div class="container">Copyright &copy MyVideoSite <%=new Date().getFullYear() %>   </div></footer>
+
+      <form action="/upload-video" class="AutForms" id="UploadForm" method="POST" enctype="multipart/form-data">
+        <h1>Upload video</h1>
+        <label >Select video:</label>
+        <input type="file" id="Video" name="video" accept="video/*" class="form-control" required>
+        <label >Select image:</label>
+         <input type="file" id="LogName" name="thumbnail" accept="images/*" class="form-control" required>
+        <label >Title:</label>
+         <input type="text" name="title" class="form-control" required>
+         <label >Description:</label>
+         <textarea name="description"  class="form-control" required></textarea>
+         
+         
+          <div class="Div">
+         <input type="submit" id="SubmitUpload" value="Upload">
+         <button type="button" id="UploadCancel">Cancel</button>
+          </div>
+       </form>
+
+           
+
+
+
+            <form action="/change-info" class="AutForms" id="InfoForm" method="POST" style="display: none;">
+        <h1>Here you can change info about your page:</h1>
+        <label >Change information about you:</label>
+       <input type="text" name="info" class="form-control">
+         <label >Change information about page:</label>
+       <textarea name="infopage" class="form-control"></textarea>
+      
+         
+         
+          <div class="Div">
+         <input type="submit" id="SubmitInfo" value="Change">
+         <button type="button" id="InfoCancel">Cancel</button>
+          </div>
+       </form>
+
+
+
+
+        <script type="text/javascript">
+        	
+
+        	  function postComment(self) {
+  
+ 
+   let ajax = new XMLHttpRequest();
+   ajax.open("POST", "/do-comment", true);
+   ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+   ajax.onreadystatechange = function () {
+
+
+		 		
+    if (this.readyState == 4 && this.status == 200) {
+    	console.log(this.responseText);
+     let response = JSON.parse(this.responseText);
+              let date=new Date();
+                   let monthName = ["January", "February", "March", "April", "May", "June",
+                 "July", "August", "September", "October", "November", "December"];
+
+                     let d = date.getDate();
+    				let m= date.getMonth();
+    				let y = date.getFullYear();
+              let html=	"<li>";
+		 		let vari="../"+response.user.photo;
+
+			 	html+='<div class="user_avatar">';
+			 		html+='<img src="'+vari+'" onerror="this.src=\'../public/images/change-icon.png\'">';
+			 	html+='</div>';
+			 	html+='<div class="spec">';
+			 	html+='<div class="comment_body">';
+			 		html+='<p class="Name">'+response.user.name+'</p>';
+			 		html+='<p>'+self.comment.value+'</p>';
+			 	html+='</div>';
+
+			 	
+			 	html+='<div class="comment_toolbar">';
+                     
+			 
+			 		html+='<div class="comment_details">';
+			 			html+='<ul>';
+			 				html+='<li><i class="fa fa-clock-o"></i>'+((date.getHours()<0)? "0"+date.getHours() :date.getHours())+':'+((date.getMinutes()<0)? "0"+date.getMinutes() :date.getMinutes())+'</li>';
+			 				html+='<li><i class="fa fa-calendar"></i>'+d+'/'+monthName[m]+'/'+y+'</li>';
+			 			
+			 			html+='</ul>';
+			 		
+
+			 	html+='</div>';
+
+                   html+='</div>';
+                  html+='<div>';
+		 	html+='</li>';
+		         console.log(html);
+
+              document.getElementById("comments").innerHTML=html+ document.getElementById("comments").innerHTML;
+              self.comment.value="";
+
+   }
+  
+ };
+
+ let videoId = document.getElementById("videoId").value;
+
+ ajax.send("videoId=" + videoId+"&comment="+self.comment.value);
+ return false;
+
+}
+        </script>
+
+                <script type="text/javascript"  src="../public/javascript/javascript2.js">
+        	
+
+     
+        </script>
+           <script type="text/javascript"  src="../public/javascript/javascript3.js">
+        	
+
+     
+        </script>
+        </body>
+</html>

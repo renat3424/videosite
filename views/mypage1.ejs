@@ -1,0 +1,80 @@
+  <% baseUrl="http://localhost:3000/"%>
+<html>
+<head>
+  <title>MyVideoSite</title>
+  <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-vlOMx0hKjUCl4WzuhIhSNZSm2yQCaf0mOU1hEDK/iztH3gU4v5NMmJln9273A6Jz" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+   <header>
+      <div class="container">
+          <a href="/"><h1 id="vd">MyVideoSite</h1></a>
+        </div>
+    </header>
+
+<%- include("layouts/navigation1")%>
+
+<div class="left-info">
+			<div class="UserInfo">
+				
+			<div class="account-image"><img src="<%='../'+user.photo %>" onerror="this.src='../public/images/change-icon.png'"></div>
+			<div class="username"><h1><%=user.name%></h1></div>
+			<div class="userinfo"><p><%=user.info%></p></div>
+            </div>
+            
+
+            <div class="userdata">
+            	<ul>
+            		
+
+            		<li><img src="../public/images/email.png"><p><%=user.email%></p> </li>
+            		
+            					
+            	</ul>
+            </div>
+               <div class="videoinfo">
+            	<ul>
+            		
+
+            		<li><p>Posted videos: <%=videos.length%></p> </li>
+            			
+            				
+            					
+            	</ul>
+            </div>
+
+		</div>
+        <div class="right-info">
+        	
+           <div class="page-info">
+           	<div class="AboutPage"><h1>About this page:</h1></div>
+           	<p><%=user.pageinfo%></p>
+           </div>
+
+           <div class="SomeButtons"><p class="Posted" style="padding: 10px;">Posted Videos:</p></div>
+           	  	<ol>
+			<%videos.forEach(function(video){%>
+
+                     <li class="videoholder" id="video">
+					<a href="/watch/<%=video.createdAt%>">
+					<div class="imageholder">
+					<img src="<%='../'+video.thumbnail %>">
+				</div>
+				<div class="TextInfo">
+				<h1 class="VideoName"><%=video.title%></h1>
+				<p class="VideoInfo"><%=video.description%></p>
+				<p class="DataInfo"><%=video.hours+":"+video.minutes+":"+video.seconds%></p>
+			     </div>
+					</a>
+				</li>
+
+
+
+			<%})%>	
+			</ol>
+        </div>
+
+<%- include("layouts/footer1")%>

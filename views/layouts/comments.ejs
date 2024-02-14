@@ -1,0 +1,69 @@
+		
+
+		<form onsubmit="return postComment(this);">
+               	
+				<textarea id="textarea" class="textarea" placeholder="Write text to post a comment" name="comment"></textarea>
+				
+                 
+                 <input type="submit" id="sub" class="button" value="submit">
+			</form>
+
+		<div class="comment_block">
+			<ul  class="user_comment">
+                <div id="comments">
+				<%  
+                     comments=comments.reverse();
+                    comments.forEach(function(comment){
+                     date=new Date(parseInt(comment.createdAt));
+                   monthName = ["January", "February", "March", "April", "May", "June",
+                 "July", "August", "September", "October", "November", "December"];
+
+                     d = date.getDate();
+    				 m= date.getMonth();
+    				y = date.getFullYear();
+    				hours=date.getHours();
+    				minutes=date.getMinutes();
+
+    				if(hours<10){
+    				hours="0"+hours
+    			}
+    			if(minutes<10){
+    				minutes="0"+minutes
+    			}
+				%>
+                      <a href="/to-user/<%=comment.user._id%>">
+					 	<li>
+		 		
+		 		
+			 	<div class="user_avatar">
+			 		<img src="<%='../'+comment.user.photo%>" onerror="this.src='../public/images/change-icon.png'">
+			 	</div>
+			 	<div class="spec">
+			 	<div class="comment_body">
+			 		<p class="Name"><%=comment.user.name%></p>
+			 		<p><%=comment.comment%></p>
+			 	</div>
+
+			 				 	<div class="comment_toolbar">
+
+			 	
+			 		<div class="comment_details">
+			 			<ul>
+			 				<li><i class="fa fa-clock-o"></i> <%=hours+":"+minutes%></li>
+			 				<li><i class="fa fa-calendar"></i> <%=d+"/"+monthName[m]+"/"+y%></li>
+			 			
+			 			</ul>
+			 		
+
+			 	</div>
+
+                   </div>
+               </div>
+		 	</li>
+               </a>
+		 	<%})%>
+		 </div>
+		 </ul>
+		</div>
+          
+		

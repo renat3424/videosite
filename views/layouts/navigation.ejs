@@ -1,0 +1,29 @@
+    <nav>
+    		<div class="container">
+
+				<div class="Serchfield">
+					<form action="/find-videos" id="searchfieldform" method="POST">
+					<input autocomplete="off" id="searchfield" type="text" name="searchfield" placeholder="Enter text to search for a file">
+					</form>
+				</div>
+
+				<% if(typeof isLogin!== undefined && isLogin) { %>
+                    <div class="LoginData">
+					<button class="button" id="MyPage"><a href="/mypage">My Page</a></button>
+					<button class="button" id="Log out"><a href="/logout">Log out</a></button>
+					<button id="search" class="button" onclick ="document.getElementById('searchfieldform').submit()">Search</button>
+				</div>
+
+
+				  <%}else{%>
+                    <div class="LoginData">
+					<button class="button" id="Sig">Sign In</button>
+					<button class="button" id="Log">Log In</button>
+					<button id="search" class="button" onclick ="document.getElementById('searchfieldform').submit()">Search</button>
+				</div>
+
+				  <%}%>
+		
+			</div>
+			</nav>
+<div class="container" id="WhiteBackground">

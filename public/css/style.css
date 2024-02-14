@@ -1,0 +1,921 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+@font-face{
+
+   src: url('../fonts/Monoton-Regular.ttf');
+   font-family: mon;
+
+}
+body{
+
+
+	background-color: #f4f4f4;
+	color: #555;
+
+	font-family:Arial, Helvetica, sans-serif;
+    
+
+	font-size: 16px;
+	line-height: 1.6em;
+	min-height: 100vh;
+	background-image: url(../images/pink.jpg);
+	animation: slider 9s infinite linear;
+    
+}
+
+@keyframes slider{
+
+   0%{
+       background-image: url(../images/pink.jpg);
+
+   }
+
+ 25%{
+       background-image: url(../images/blue.png);
+
+   }
+
+    50%{
+       background-image: url(../images/pinkor.png);
+
+   }
+
+    75%{
+       background-image: url(../images/purple.jpg);
+
+   }
+
+}
+
+a{
+
+
+	text-decoration: none;
+	color: white;
+}
+
+
+
+.container{
+	width: 80%;
+	margin: auto;
+	position: relative;
+	
+
+
+
+}
+
+#WhiteBackground{
+
+	background-color: #f4f4f4;
+	padding-top: 20px;
+	min-height: 130vh;
+	overflow: hidden;
+	padding-bottom: 200px;
+
+    
+}
+
+
+header{
+    
+	background-color: red;
+    color: #fff;
+    padding: 30px;
+
+}
+
+nav{
+
+	background-color: #333;
+	width: 100%;
+  
+}
+
+footer{
+background-color: #333;
+	color: #fff;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 10%;
+	text-align: center;
+padding-top: 10px;
+
+}
+
+.button{
+
+padding: 5px;
+border: none;
+color: white;
+text-align: center;
+ outline: none;
+ background-color:  #333;
+ font-size: 15px;
+
+}
+
+ .button:hover{
+
+
+    background-color: #8f8d8d;
+
+}
+
+ .button:active{
+
+ background-color: #6b6b6b;
+    
+
+}
+
+#searchfield{
+padding: 5px;
+ 
+	color: white;
+	 background-color:  #333;
+	 font-size: 15px;
+	 width: 98%;
+	 outline: none;
+	 margin: auto;
+}
+#search{
+
+ position: absolute;
+ right: 0px;
+
+}
+ul{
+	list-style: none;
+}
+
+ol{
+list-style: none;
+}
+.videoholder{
+    
+	
+	background-color: #333;
+	border-radius: 10px;
+	
+	align-items: center;
+	overflow: hidden;
+
+  height: 115px;
+  box-shadow: 5px 10px;
+  width: 95%;
+margin:0px auto;
+margin-bottom: 20px;
+ 
+ 
+}
+
+.videoholder:hover{
+    
+	height: 120px;
+width: 98%;
+ 
+ 
+}
+
+.videoholder a{
+
+   width: 100%;
+}
+.imageholder{
+	
+    float: left;
+    height: 100%;
+    width: 25%;
+	overflow: hidden;
+	
+	
+
+}
+
+.imageholder img{
+	
+   
+    height: 100%;
+    width: 100%;
+	
+	
+	
+
+}
+
+.video-player{
+  outline: none;
+  margin: 10px 10px;
+
+}
+.TextInfo{
+	float: left;
+  
+    height: 100%;
+    width: 75%;
+   
+
+}
+.TextInfo .VideoName{
+      margin-top: 5px;
+     height: 25%;
+	 font-size: 20px;
+	 padding-left: 10px;
+	 border-bottom: 1px solid white;
+}
+
+.TextInfo .VideoInfo{
+
+     height: 45%;
+	 font-size: 15px;
+	 padding-left: 10px;
+	 border-bottom: 1px solid white;
+	 overflow: hidden;
+
+}
+.TextInfo .DataInfo{
+
+     height: 20%;
+	 font-size: 10px;
+	 padding-left: 10px;
+	 
+	
+
+}
+#SubmitLog, #SubmitSign{
+display: inline-block;
+padding: 5px;
+border: none;
+color: white;
+text-align: center;
+ outline: none;
+ background-color:  #333;
+ font-size: 20px;
+
+}
+
+ #SubmitLog:hover, #SubmitSign:hover{
+
+
+    background-color: #8f8d8d;
+
+}
+
+ #SubmitLog:active, #SubmitSign:active{
+
+ background-color: #6b6b6b;
+    
+
+}
+
+.textarea{
+padding: 5px;
+ 
+	color: white;
+	 background-color:  #333;
+	 font-size: 15px;
+	 width: 98%;
+	 outline: none;
+	 margin: 10px;
+	 
+	 min-height: 200px;
+	
+
+}
+#comment{
+
+	margin: 10px;
+	display: none;
+
+}
+.CommentOwner{
+
+	font-size: 30px;
+}
+
+
+.AutForms{
+
+
+      
+       position: absolute;
+       width: 40%;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+       background-color: #333;
+	color: #fff;
+	border-radius: 10px;
+	
+
+
+
+}
+
+#LogInForm{
+
+
+       display: none;
+      
+	
+
+
+
+}
+
+
+#SignInForm{
+
+
+       display: none;
+      
+	
+
+
+
+}
+
+#UploadForm{
+
+
+       display: none;
+      
+	
+
+
+
+}
+
+
+.AutForms h1{
+
+
+    font-size: 20px;
+    line-height: 2em;
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+	
+
+
+
+}
+
+.AutForms textarea{
+display: block;
+padding: 10px;
+ 
+	color: white;
+	 background-color:  #333;
+	 font-size: 15px;
+	 width: 50%;
+	 outline: none;
+	 margin: auto;
+	 margin-top: 10px;
+	 margin-bottom: 10px;
+
+}
+
+.AutForms input{
+display: block;
+padding: 10px;
+ 
+	color: white;
+	 background-color:  #333;
+	 font-size: 15px;
+	 width: 50%;
+	 outline: none;
+	 margin: auto;
+	 margin-top: 10px;
+	 margin-bottom: 10px;
+
+}
+
+#SubmitUpload{
+
+display: inline-block;
+padding: 10px;
+border: none;
+color: white;
+text-align: center;
+ outline: none;
+ background-color:  #333;
+ font-size: 20px;
+ 
+ margin-bottom: 15px;
+
+
+}
+.AutForms button{
+display: inline-block;
+padding: 10px;
+border: none;
+color: white;
+text-align: center;
+ outline: none;
+ background-color:  #333;
+ font-size: 20px;
+ 
+ margin-bottom: 15px;
+
+
+}
+
+.AutForms label{
+display: block;
+padding: 10px;
+border: none;
+color: white;
+
+text-align: center;
+ outline: none;
+ background-color:  #333;
+ font-size: 15px;
+ 
+ margin-bottom: 15px;
+
+
+}
+.Div{
+
+	 width: 50%;
+	
+	 margin: auto;
+	 margin-top: 10px;
+	 margin-bottom: 10px;
+}
+
+.AutForms input:hover{
+
+
+    background-color: #8f8d8d;
+
+}
+
+.Autforms input:active{
+
+ background-color: #6b6b6b;
+    
+
+}
+#SubmitUpload:hover{
+
+
+    background-color: #8f8d8d;
+
+}
+
+#SubmitUpload:active{
+
+ background-color: #6b6b6b;
+    
+
+}
+
+.AutForms button:hover{
+
+
+    background-color: #8f8d8d;
+
+}
+
+.Autforms button:active{
+
+ background-color: #6b6b6b;
+    
+
+}
+
+@media(max-width: 700px){
+
+    .imageholder{
+    	width: 140px;
+    }
+    .TextInfo{
+    	width: auto;
+    }
+}
+
+@media(max-width: 220px){
+
+    .imageholder{
+    	width: 100%;
+    }
+    
+}
+
+
+
+
+.left-info{
+	float: left;
+  width: 30%;
+  box-shadow: 5px 10px;
+  margin: 20px;
+ 
+
+	 box-sizing: border-box;
+
+}
+
+.right-info{
+width: 65%;
+float: right;
+padding: 20px;
+
+
+	 box-sizing: border-box;
+	
+}
+
+.account-image img{
+   width: 100%;
+  
+
+
+}
+
+.username{
+
+	
+	color: #f4f4f4;
+	background-color: #333;
+	padding: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.username h1{
+ display: inline-block;
+ width: 86%;
+
+ font-size: 25px;
+ margin-top: 5px;
+ 
+ 
+}
+
+.username button{
+  display: inline-block;
+   width: 10%;
+ 
+  padding: 5px;
+border: none;
+color: #43a1bc;
+text-align: center;
+ outline: none;
+ background-color:  white;
+ font-size: 15px;
+ border-radius: 50%;
+ margin-bottom: 10px;
+ margin-top: 5px;
+
+}
+
+.username button:hover{
+
+     color: black;
+}
+
+.userinfo{
+
+	
+	color: #f4f4f4;
+	background-color: #333;
+	padding: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid white;
+}
+.userinfo p{
+ display: inline-block;
+ width: 85%;
+
+ font-size: 15px;
+ margin-top: 5px;
+ 
+ 
+}
+.userinfo button{
+  display: inline-block;
+   width: 10%;
+ 
+  padding: 5px;
+border: none;
+color: #333;
+text-align: center;
+ outline: none;
+ background-color:  white;
+ font-size: 15px;
+ border-radius: 50%;
+ margin-bottom: 10px;
+ margin-top: 5px;
+
+}
+
+.username button:hover{
+
+     color: black;
+}
+
+
+.userinfo button:hover{
+
+     color: black;
+}
+
+
+.userdata{
+color: #f4f4f4;
+	background-color: #333;
+	padding: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+
+}
+.userdata ul li img{
+
+
+
+	width: 8%;
+	border-radius: 50%;
+}
+
+.userdata ul li p{
+
+
+display: inline-block;
+width: 73%;
+margin-left: 10px;
+
+ font-size: 13px;
+ margin-top: 5px;
+}
+
+.userdata ul li button{
+
+display: inline-block;
+   width: 10%;
+  
+  padding: 5px;
+border: none;
+color: #333;
+text-align: center;
+ outline: none;
+ background-color:  white;
+ font-size: 15px;
+ border-radius: 50%;
+ margin-bottom: 10px;
+ margin-top: 5px;
+}
+
+.userdata button:hover{
+
+     color: black;
+}
+
+
+.videoinfo ul li p{
+
+
+  padding: 5px;
+  color: #555;
+  padding-left: 15px;
+}
+
+
+.AboutPage{
+
+	
+	color: #f4f4f4;
+	background-color: #333;
+	padding: 10px;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	
+ border-radius: 10px;
+    box-shadow: 5px 10px;
+margin: auto;
+	
+}
+.AboutPage h1{
+ display: inline-block;
+ width: 85%;
+
+ font-size: 35px;
+ margin-top: 5px;
+ color: white;
+
+
+
+ 
+}
+
+.AboutPage button{
+  display: inline-block;
+   width: 10%;
+  
+  padding: 5px;
+border: none;
+color: #333;
+
+text-align: center;
+ outline: none;
+ background-color:  white;
+ font-size: 35px;
+ border-radius: 50%;
+ margin-bottom: 10px;
+ margin-top: 5px;
+ border-bottom: 1px solid #555;
+
+
+
+
+}
+
+.AboutPage button:hover{
+ color:black;
+
+}
+.page-info{
+
+	padding: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #555;
+	
+}
+
+.page-info p{
+
+ font-size: 20px;
+ margin-top: 20px;
+margin-bottom: 20px;
+padding-left: 10px;
+}
+
+.SomeButtons{
+	 background-color:  #333;
+width: 100%;
+	margin: 20px 0;
+
+	
+}
+.SomeButtons button{
+padding: 5px;
+border: none;
+color: white;
+text-align: center;
+ outline: none;
+ background-color:  #333;
+ font-size: 15px;
+ padding: 20px;
+ font-size: 25px;
+ width: 40%;
+
+
+}
+
+.SomeButtons button:hover{
+
+
+    background-color: #8f8d8d;
+
+}
+
+ .SomeButtons button:active{
+
+ background-color: #6b6b6b;
+    
+
+}
+
+#addvideo{
+	width: 20%;
+}
+
+#sub{
+  
+   margin: 5px 10px;
+   padding: 7px;
+
+
+
+
+}
+
+.videoholder1{
+    
+	
+	background-color: #867979;
+	border-radius: 10px;
+	
+	align-items: center;
+	overflow: hidden;
+
+   min-height: 100px;
+   max-height: 400px;
+  box-shadow: 5px 10px;
+  width: 95%;
+margin:0px auto;
+margin-bottom: 20px;
+ 
+ 
+}
+.imageholder1{
+	
+    float: left;
+    height: stretch;
+    width: 15%;
+	overflow: hidden;
+	
+	
+
+}
+
+.imageholder1 img{
+	
+   
+     height: stretch;
+    width: 100%;
+	
+	
+	
+
+}
+
+
+.TextInfo1{
+	float: left;
+  
+    height: stretch;
+    width: 85%;
+   
+
+}
+.TextInfo1 .VideoName1{
+      margin-top: 5px;
+     height: stretch;
+	 font-size: 20px;
+	 padding-left: 10px;
+	 border-bottom: 1px solid white;
+}
+
+.TextInfo1 .VideoInfo1{
+
+    height: stretch;
+	 font-size: 15px;
+	 padding-left: 10px;
+	 border-bottom: 1px solid white;
+	 overflow: hidden;
+
+}
+.TextInfo1 .DataInfo1{
+
+    height: stretch;
+	 font-size: 10px;
+	 padding-left: 10px;
+	 
+	
+
+}
+.somediv{
+	height:300px;
+}
+
+header{
+    
+	background-color: #FEE715FF;
+    color: white;
+    padding: 30px;
+
+}
+
+#vd{
+   
+
+	color: #101820FF;
+	font-size: 45px;
+	font-family: mon;
+
+}
+
+
+.Posted{
+
+    display: inline-block;  
+	width: 80%;
+	color: white;
+	padding-left: 10%;
+	box-sizing: border-box;
+	font-size: 30px;
+
+
+}

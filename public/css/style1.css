@@ -1,0 +1,91 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+.user_avatar {
+	width: 100px;
+	height: 100px;
+
+
+	vertical-align: middle;
+ 
+box-sizing: border-box;
+     float: left;
+}
+
+.user_avatar img{
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+        box-sizing: border-box;
+	}
+
+
+.comment_block {
+	width: 100%;
+	height: 100%;
+
+	margin: 0 auto;
+	padding: 10px;
+box-sizing: border-box;
+
+}
+
+
+	.user_comment {
+			list-style-type: none;
+		}
+
+.comment_body {
+			display: inline-block;
+			vertical-align: middle;
+
+			width: calc(100% - 110px);
+        min-height: 100px;
+			margin-left: 10px;
+			padding: 5px 10px;
+			font-size: .9rem;
+			color: #555;
+			background-color: #FFF;
+			border-bottom: 2px solid lighten(#CCC, 15%);
+box-sizing: border-box;
+            overflow-wrap: break-word;
+
+	}
+
+
+		.comment_body p {
+					padding: 5px;
+				}
+
+
+				.comment_body span {
+					color: #6495ED;
+					margin-right: 2px;
+				}
+
+
+		.comment_toolbar {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.comment_toolbar ul {
+				list-style-type: none;
+				
+				font-size: 0;}
+
+			.comment_toolbar li {
+					display: inline-block;
+					padding: 5px;
+					font-size: .7rem;
+					color: lighten(#CCC, 5%);
+					
+				}
+
+
+				.comment_details {
+				display: inline-block;
+				vertical-align: middle;
+				width: 70%;
+				text-align: left;
+			}

@@ -1,0 +1,23 @@
+<%- include("layouts/header")%>
+<%- include("layouts/navigation")%>
+	<ol>
+			<%videos.forEach(function(video){%>
+
+                     <li class="videoholder" id="video">
+					<a href="/watch/<%=video.createdAt%>">
+					<div class="imageholder">
+					<img src="<%=video.thumbnail %>">
+				</div>
+				<div class="TextInfo">
+				<h1 class="VideoName"><%=video.title%></h1>
+				<p class="VideoInfo"><%=video.description%></p>
+				<p class="DataInfo"><%=video.hours+":"+video.minutes+":"+video.seconds%></p>
+			     </div>
+					</a>
+				</li>
+
+
+
+			<%})%>	
+			</ol>
+<%- include("layouts/footer")%>

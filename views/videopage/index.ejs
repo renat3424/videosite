@@ -1,0 +1,14 @@
+<%- include("../layouts/header1")%>
+<%- include("../layouts/navigation1")%>
+<div class="video-player">
+	  <% baseUrl="http://localhost:3000/"%>
+	  <input type="hidden" id="videoId" value="<%=video._id%>">
+					<video width="100%" controls autoplay muted id="myvideo">
+						<source src="<%=baseUrl+video.filePath%>" type="video/mp4">
+					</video>
+				</div>
+			
+
+<%- include("../layouts/comments")%>
+<div class="somediv"></div>
+<%- include("../layouts/footer1")%>
