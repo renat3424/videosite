@@ -5,6 +5,8 @@
 This is a videostoring website project. It has such features as:
 
 -authentification as user
+
 -video uploading
+
 -video commenting
  
